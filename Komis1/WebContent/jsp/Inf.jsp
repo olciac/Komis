@@ -11,7 +11,21 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
+<style>
+.obraz {
+	height: 300px;
+}
+.przycisk
+	{
+	color: red;
+	float: right;
+	background: yellow;
+	height : 50px;
+	width: 200px;
+	text-align: center;
+	line-height: -moz-block-height;
+	}
+</style>
 <body>
 <div class="container">
     <div class="row">
@@ -30,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbar-admin">
                  <!---------------------------------MENU--------------------------------->
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Lista samochodów</a></li>
+                        <li><a href="${home}/Komis1/Komis"><span class="glyphicon glyphicon-dashboard"></span> Lista samochodów</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span> Dodaj samochód</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Kontakt</a></li>
                     </ul>
@@ -50,48 +64,19 @@
     
      
 <div class="container">
-  <h2>Lista pojazdów</h2>
-    
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Marka</th>
-        <th>Model</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <c:forEach items="${lista}" var="car">
-    <tr>
-        <td>Marka auta: <c:out value="${car.make}"/></td>
-        <td>Model: <c:out value="${car.model}"/></td>  
-        <td> <a href="${home}/Komis1/informacja?numer=${car.numer}" class="btn btn-danger">Zobacz szczegóły</a> </td>
-    </tr>
-    
-</c:forEach>
-    </tbody>
-  </table>
+ 	<a class="przycisk" href="${home}/Komis1/komis">Powrót</a><br>
+
+	<img class="obraz" src="${car.foto}" alt="car">
+	<br><hr>
+	<ul class="list-group">
+		<li class="list-group-item">Marka : ${car.make}</li>
+		<li class="list-group-item">Model : ${car.model}</li>
+		<li class="list-group-item">Rok produkcji : ${car.year}</li>
+		<li class="list-group-item">Cena : ${car.price} zł</li>
+	</ul>
 </div>
      
      
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-       </body>
-       </html>
+   
+</body>
+</html>

@@ -9,4 +9,12 @@
     <servlet-name>Komis</servlet-name>
     <url-pattern>/komis</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Informacja</servlet-name>
+    <servlet-class>pl.servlet.Informacja</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Informacja</servlet-name>
+    <url-pattern>/informacja</url-pattern>
+  </servlet-mapping>
 </web-app>
